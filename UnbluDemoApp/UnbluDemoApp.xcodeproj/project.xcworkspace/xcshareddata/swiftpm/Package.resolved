@@ -1,0 +1,15 @@
+{
+  "originHash" : "c479eeb46786c399bbf414c9c0c951b0abed5e3cfd2a4662624593a917027536",
+  "pins" : [
+    {
+      "identity" : "ios-sdk-xcframeworks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/unblu/ios-sdk-xcframeworks",
+      "state" : {
+        "revision" : "83e7e66e54c5f5eb693ffa20eac342268ba46341",
+        "version" : "4.9.3"
+      }
+    }
+  ],
+  "version" : 3
+}

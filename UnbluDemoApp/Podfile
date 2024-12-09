@@ -1,0 +1,11 @@
+platform :ios, '13.0'
+use_frameworks!
+inhibit_all_warnings!
+
+workspace 'UnbluDemoApp'
+project 'UnbluDemoApp.xcodeproj'
+
+target 'UnbluDemoApp' do
+  use_frameworks!
+  pod 'WebRTC-SDK', '=104.5112.05'
+end
