@@ -1,13 +1,22 @@
 {
-  "originHash" : "c479eeb46786c399bbf414c9c0c951b0abed5e3cfd2a4662624593a917027536",
+  "originHash" : "1142b605fb82fca07e19e4901affc0bfe4419131d53fa8f318a9bec299124edc",
   "pins" : [
     {
       "identity" : "ios-sdk-xcframeworks",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/unblu/ios-sdk-xcframeworks",
       "state" : {
-        "revision" : "83e7e66e54c5f5eb693ffa20eac342268ba46341",
-        "version" : "4.9.3"
+        "revision" : "fd5a76ec366bcdad6752e6914985c4382731ebe3",
+        "version" : "4.9.10"
+      }
+    },
+    {
+      "identity" : "webrtc-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/livekit/webrtc-xcframework",
+      "state" : {
+        "revision" : "f26039043cb88e0b80e041a9a36946b633f1effc",
+        "version" : "125.6422.22"
       }
     }
   ],

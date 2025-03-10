@@ -11,7 +11,7 @@
 		321115752D0351AE00DB8FE3 /* UnbluCallKitModule in Frameworks */ = {isa = PBXBuildFile; productRef = 321115742D0351AE00DB8FE3 /* UnbluCallKitModule */; };
 		321115772D0351AE00DB8FE3 /* UnbluLiveKitWebRtcProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 321115762D0351AE00DB8FE3 /* UnbluLiveKitWebRtcProvider */; };
 		321115792D0351AE00DB8FE3 /* UnbluMobileSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 321115782D0351AE00DB8FE3 /* UnbluMobileSDK */; };
-		7AFF049620EADD93476CBF04 /* Pods_UnbluDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FEB0E21CC242C98D719CEF /* Pods_UnbluDemoApp.framework */; };
+		328E41A42D7DBDF800F77FD4 /* LiveKitWebRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 328E41A32D7DBDF800F77FD4 /* LiveKitWebRTC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +41,6 @@
 /* Begin PBXFileReference section */
 		321114DF2D0345B800DB8FE3 /* UnbluDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnbluDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		321115462D034C1F00DB8FE3 /* NotificationServiceDecoder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationServiceDecoder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		60FEB0E21CC242C98D719CEF /* Pods_UnbluDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnbluDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6950C05D6A0B6D7AE8BEF11D /* Pods-UnbluDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnbluDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-UnbluDemoApp/Pods-UnbluDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
-		7B646637FCF7E9BAB5AEAD52 /* Pods-UnbluDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnbluDemoApp.release.xcconfig"; path = "Target Support Files/Pods-UnbluDemoApp/Pods-UnbluDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -87,10 +84,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328E41A42D7DBDF800F77FD4 /* LiveKitWebRTC in Frameworks */,
 				321115752D0351AE00DB8FE3 /* UnbluCallKitModule in Frameworks */,
 				321115772D0351AE00DB8FE3 /* UnbluLiveKitWebRtcProvider in Frameworks */,
 				321115792D0351AE00DB8FE3 /* UnbluMobileSDK in Frameworks */,
-				7AFF049620EADD93476CBF04 /* Pods_UnbluDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +108,6 @@
 				320094202D0357A100D0E107 /* NotificationServiceDecoder */,
 				321114E02D0345B800DB8FE3 /* Products */,
 				A6B2C90E5E914410E3F12B43 /* Pods */,
-				3BC2ECDF0FEE7A2885727942 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,19 +120,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3BC2ECDF0FEE7A2885727942 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				60FEB0E21CC242C98D719CEF /* Pods_UnbluDemoApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		A6B2C90E5E914410E3F12B43 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6950C05D6A0B6D7AE8BEF11D /* Pods-UnbluDemoApp.debug.xcconfig */,
-				7B646637FCF7E9BAB5AEAD52 /* Pods-UnbluDemoApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -148,12 +134,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 321114ED2D0345B900DB8FE3 /* Build configuration list for PBXNativeTarget "UnbluDemoApp" */;
 			buildPhases = (
-				5A3FBAB1CC9CAF9F3DA662F7 /* [CP] Check Pods Manifest.lock */,
 				321114DB2D0345B800DB8FE3 /* Sources */,
 				321114DC2D0345B800DB8FE3 /* Frameworks */,
 				321114DD2D0345B800DB8FE3 /* Resources */,
 				321115522D034C1F00DB8FE3 /* Embed Foundation Extensions */,
-				8115EB28EAF38FB57BD685C5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,6 +152,7 @@
 				321115742D0351AE00DB8FE3 /* UnbluCallKitModule */,
 				321115762D0351AE00DB8FE3 /* UnbluLiveKitWebRtcProvider */,
 				321115782D0351AE00DB8FE3 /* UnbluMobileSDK */,
+				328E41A32D7DBDF800F77FD4 /* LiveKitWebRTC */,
 			);
 			productName = UnbluDemoApp;
 			productReference = 321114DF2D0345B800DB8FE3 /* UnbluDemoApp.app */;
@@ -219,6 +204,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				321115732D0351AE00DB8FE3 /* XCRemoteSwiftPackageReference "ios-sdk-xcframeworks" */,
+				328E41A22D7DBDF800F77FD4 /* XCRemoteSwiftPackageReference "webrtc-xcframework" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 321114E02D0345B800DB8FE3 /* Products */;
@@ -247,48 +233,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5A3FBAB1CC9CAF9F3DA662F7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UnbluDemoApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8115EB28EAF38FB57BD685C5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnbluDemoApp/Pods-UnbluDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UnbluDemoApp/Pods-UnbluDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnbluDemoApp/Pods-UnbluDemoApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		321114DB2D0345B800DB8FE3 /* Sources */ = {
@@ -437,7 +381,6 @@
 		};
 		321114EE2D0345B900DB8FE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6950C05D6A0B6D7AE8BEF11D /* Pods-UnbluDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -474,7 +417,6 @@
 		};
 		321114EF2D0345B900DB8FE3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B646637FCF7E9BAB5AEAD52 /* Pods-UnbluDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -599,7 +541,15 @@
 			repositoryURL = "https://github.com/unblu/ios-sdk-xcframeworks";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.9.3;
+				minimumVersion = 4.9.10;
+			};
+		};
+		328E41A22D7DBDF800F77FD4 /* XCRemoteSwiftPackageReference "webrtc-xcframework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/livekit/webrtc-xcframework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 125.6422.22;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -619,6 +569,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 321115732D0351AE00DB8FE3 /* XCRemoteSwiftPackageReference "ios-sdk-xcframeworks" */;
 			productName = UnbluMobileSDK;
+		};
+		328E41A32D7DBDF800F77FD4 /* LiveKitWebRTC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 328E41A22D7DBDF800F77FD4 /* XCRemoteSwiftPackageReference "webrtc-xcframework" */;
+			productName = LiveKitWebRTC;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
