@@ -8,7 +8,7 @@ It provides a foundation for reproducing potential issues or bugs and offers a f
 Feel free to submit issues, feature requests, or pull requests to enhance the functionality of this demo application.
 
 
-# General Unblu iOS Integration Guide
+## General Unblu iOS Integration Guide
 
 This guide will help you integrate Unblu into your iOS application.
 
@@ -127,6 +127,10 @@ If your Unblu server uses non-HTTPS endpoints or special ports, update your Info
 <true/>
 </dict>
 ```
+
+### 3.4 Add credentials to code
+
+For the demo app to work, you must add your Unblu credentials (your API key and the server URL) to [`Configuration.swift`](https://github.com/unblu/ios-demo-app/blob/main/UnbluDemoApp/UnbluDemoApp/unblu/Configuration.swift).
 
 
 ## 4. Key Implementation Steps with Code
