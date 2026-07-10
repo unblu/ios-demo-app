@@ -7,25 +7,46 @@ import SwiftUI
 
 class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate {
     static var unbluClient = UnbluClient()
-
+    static let unbluSecureStorage = UnbluKeychainPreferencesStorage(
+        accessControl: .afterFirstUnlock(thisDeviceOnly: false),
+        shared: true
+    )
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
+        appLog.notice("UnbluDemo [AppDelegate] didFinishLaunching")
         configureRemoteNotifications()
+        observeLifecycleNotifications()
         AppDelegate.unbluClient.createConfiguration()
+        UnbluNotificationApi.instance.keychainPreferencesStorage = AppDelegate.unbluSecureStorage
+
         return true
     }
 
-    private func configureRemoteNotifications() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge]) { granted, error in
-            guard error == nil, granted else { return }
-            DispatchQueue.main.async {
-                UIApplication.shared.registerForRemoteNotifications()
-            }
+    private func observeLifecycleNotifications() {
+        NotificationCenter.default.addObserver(
+            forName: UIApplication.didBecomeActiveNotification,
+            object: nil,
+            queue: .main
+        ) { _ in
+            appLog.notice("UnbluDemo [AppDelegate] didBecomeActive")
+        }
+        NotificationCenter.default.addObserver(
+            forName: UIApplication.didEnterBackgroundNotification,
+            object: nil,
+            queue: .main
+        ) { _ in
+            appLog.notice("UnbluDemo [AppDelegate] didEnterBackground")
         }
     }
 
+    private func configureRemoteNotifications() {
+        UIApplication.shared.registerForRemoteNotifications()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .alert, .badge]) { granted, error in
+        }
+    }
+    
     func application(
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
@@ -56,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
                 withCompletionHandler: { _ in }
             )
         } catch {
-            print("Error handling remote notification: \(error)")
+            appLog.notice("UnbluDemo Error handling remote notification: \(String(describing: error), privacy: .public)")
         }
     }
 

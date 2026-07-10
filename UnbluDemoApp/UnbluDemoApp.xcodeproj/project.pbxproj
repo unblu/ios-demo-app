@@ -541,7 +541,7 @@
 			repositoryURL = "https://github.com/unblu/ios-sdk-xcframeworks";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.9.10;
+				minimumVersion = 4.13.6;
 			};
 		};
 		328E41A22D7DBDF800F77FD4 /* XCRemoteSwiftPackageReference "webrtc-xcframework" */ = {

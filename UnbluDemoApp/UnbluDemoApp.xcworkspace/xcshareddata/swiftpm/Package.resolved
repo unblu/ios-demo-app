@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/unblu/ios-sdk-xcframeworks",
       "state" : {
-        "revision" : "fd5a76ec366bcdad6752e6914985c4382731ebe3",
-        "version" : "4.9.10"
+        "revision" : "43d3bd0e4f8fa1d03d0ff613a1d8461654eeac75",
+        "version" : "4.13.6"
       }
     },
     {

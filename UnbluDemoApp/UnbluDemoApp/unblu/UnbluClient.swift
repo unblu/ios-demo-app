@@ -9,7 +9,7 @@ class ConversationInterceptor: UnbluConversationInterceptor {
         customVisitorData: String?,
         onComplete: @escaping (String?) -> Void
     ) {
-        print("Conversation intercepted data: \(customVisitorData ?? "nil")")
+        appLog.notice("UnbluDemo Conversation intercepted data: \(customVisitorData ?? "nil", privacy: .public)")
         onComplete(customVisitorData)
     }
 }
@@ -33,13 +33,13 @@ public class UnbluClient {
     func createConfiguration() {
         UnbluClientConfiguration.callKitProviderIconResourceName = Configuration.callKitIcon
         unbluConfiguration = createUnbluConfig()
-        unbluConfiguration?.unbluPushNotificationVersion = .Encrypted //.EncryptedService
-
+        unbluConfiguration?.unbluPushNotificationVersion = .EncryptedService
+        
          // Configure URL Whitelist
         unbluConfiguration?.internalUrlPatternWhitelist = [
             try! NSRegularExpression(pattern: "^.*$", options: [])
         ]
-
+        unbluConfiguration?.securePreferencesStorage = AppDelegate.unbluSecureStorage
         // Register Call Module
         callModule = UnbluCallModuleProvider.create()
         try? unbluConfiguration?.register(module: callModule!)

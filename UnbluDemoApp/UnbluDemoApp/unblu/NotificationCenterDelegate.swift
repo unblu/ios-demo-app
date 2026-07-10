@@ -7,7 +7,7 @@ import UnbluCoreSDK
         do {
             try UnbluNotificationApi.instance.didReceive(notificationResponse: response, withCompletionHandler: completionHandler)
         } catch {
-            print("not unblu notification")
+            appLog.notice("UnbluDemo not unblu notification")
             completionHandler()
         }
     }
@@ -16,7 +16,7 @@ import UnbluCoreSDK
         do {
             try UnbluNotificationApi.instance.willPresent(notification: notification, withCompletionHandler: completionHandler)
         } catch {
-            print("not unblu notification")
+            appLog.notice("UnbluDemo not unblu notification")
             completionHandler([.alert, .badge, .sound])
         }
     }
