@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         configureRemoteNotifications()
         observeLifecycleNotifications()
         AppDelegate.unbluClient.createConfiguration()
+        AppDelegate.unbluClient.startPendingCallPolling()
         UnbluNotificationApi.instance.keychainPreferencesStorage = AppDelegate.unbluSecureStorage
 
         return true

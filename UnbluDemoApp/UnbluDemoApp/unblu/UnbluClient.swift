@@ -29,8 +29,31 @@ public class UnbluClient {
     var callDelegate: CallModuleDelegate?
     var coDelegate: CoBrowsingDelegate?
     var coBrowsingModule: UnbluMobileCoBrowsingModuleApi?
+    private var pendingCallTimer: Timer?
+    var useCustomCallKitProvider = true
+
+    func startPendingCallPolling() {
+        DispatchQueue.main.async {
+            self.pendingCallTimer?.invalidate()
+            self.pendingCallTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+                if UnbluNotificationApi.instance.hasPendingIncomingCall {
+                    appLog.notice("UnbluDemo [UnbluClient] polling hasPendingIncomingCall: \(UnbluNotificationApi.instance.hasPendingIncomingCall)")
+                }
+            }
+        }
+    }
+
+    func stopPendingCallPolling() {
+        DispatchQueue.main.async {
+            self.pendingCallTimer?.invalidate()
+            self.pendingCallTimer = nil
+        }
+    }
 
     func createConfiguration() {
+        if useCustomCallKitProvider {
+            UnbluNotificationApi.setCallKitProvider(LoggingCallKitProvider())
+        }
         UnbluClientConfiguration.callKitProviderIconResourceName = Configuration.callKitIcon
         unbluConfiguration = createUnbluConfig()
         unbluConfiguration?.unbluPushNotificationVersion = .EncryptedService

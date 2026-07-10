@@ -26,10 +26,12 @@ class VisitorClientDelegate: UnbluVisitorClientDelegate {
 
     func unbluDidInitialize() {
         appLog.notice("UnbluDemo [VisitorClientDelegate] unbluDidInitialize")
+        unbluClient.stopPendingCallPolling()
     }
 
     func unbluDidDeinitialize() {
         appLog.notice("UnbluDemo [VisitorClientDelegate] unbluDidDeinitialize")
+        unbluClient.startPendingCallPolling()
     }
 
     func unblu(didUpdateAgentAvailability isAvailable: Bool) {
