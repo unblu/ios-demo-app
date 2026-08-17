@@ -6,6 +6,7 @@ import BackgroundTasks
 import SwiftUI
 
 class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate {
+    static var callDelegate = IncomingCallDelegate()
     static var unbluClient = UnbluClient()
     static let unbluSecureStorage = UnbluKeychainPreferencesStorage(
         accessControl: .afterFirstUnlock(thisDeviceOnly: false),
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         AppDelegate.unbluClient.createConfiguration()
         AppDelegate.unbluClient.startPendingCallPolling()
         UnbluNotificationApi.instance.keychainPreferencesStorage = AppDelegate.unbluSecureStorage
+        UnbluNotificationApi.instance.incomingCallDelegate = AppDelegate.callDelegate
 
         return true
     }

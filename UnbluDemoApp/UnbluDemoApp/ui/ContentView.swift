@@ -40,7 +40,8 @@ struct ContentView: View {
     @State private var isLoggedIn: Bool = false
     @State var tabSelection: Int = 1
     @Environment(\.scenePhase) private var scenePhase
-    
+    @ObservedObject private var uiState = AppDelegate.getUnbluUiState()
+
     var body: some View {
         Group {
             if isLoggedIn {
@@ -50,7 +51,11 @@ struct ContentView: View {
                     isLoggedIn = true
                 }
             }
-        }.onChange(of: scenePhase) { newPhase in
+        }
+        .overlay(alignment: .top) {
+            incomingCallBanner
+        }
+        .onChange(of: scenePhase) { newPhase in
             if newPhase == .active {
                 appLog.notice("UnbluDemo [ContentView] pending call: \(UnbluNotificationApi.instance.hasPendingIncomingCall)")
             }
@@ -86,6 +91,23 @@ struct ContentView: View {
                 Text("Connecting...")
                     .foregroundColor(.gray)
             }
+        }
+    }
+
+    @ViewBuilder
+    private var incomingCallBanner: some View {
+        if let event = uiState.lastIncomingCallEvent {
+            Text(event)
+                .font(.footnote.monospaced())
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(12)
+                .background(Color.black.opacity(0.85))
+                .cornerRadius(10)
+                .padding(.horizontal, 12)
+                .onTapGesture {
+                    uiState.lastIncomingCallEvent = nil
+                }
         }
     }
 

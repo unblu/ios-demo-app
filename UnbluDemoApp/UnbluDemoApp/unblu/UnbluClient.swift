@@ -17,6 +17,7 @@ class ConversationInterceptor: UnbluConversationInterceptor {
 public class UnbluUiState: ObservableObject {
     @Published var isOverview: Bool = true
     @Published var unbluView: UIView?
+    @Published var lastIncomingCallEvent: String?
 }
 
 public class UnbluClient {
@@ -30,7 +31,7 @@ public class UnbluClient {
     var coDelegate: CoBrowsingDelegate?
     var coBrowsingModule: UnbluMobileCoBrowsingModuleApi?
     private var pendingCallTimer: Timer?
-    var useCustomCallKitProvider = true
+    var useCustomCallKitProvider = false
 
     func startPendingCallPolling() {
         DispatchQueue.main.async {
